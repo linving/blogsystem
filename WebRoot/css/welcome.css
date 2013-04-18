@@ -1,0 +1,38 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	text-align: justify;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #000000;
+}
+
+p, ul, ol {
+	margin: 0px;
+	padding: 0px;
+	line-height: 35px;
+}
+
+#welcome{
+	
+	width: 650px;
+	margin: 0 auto;
+	padding: 0px;
+	position:relative;
+	top:28%;
+}
+
+#enter{
+	width:180px;
+	margin: 0 auto;
+	padding: 0px;
+}
+a{
+	color: #9CC54F;
+	font-size:30px;
+}

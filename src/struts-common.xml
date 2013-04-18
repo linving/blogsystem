@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<!-- 指定Struts 2配置文件的根元素 -->
+<struts>
+	
+	
+	<!-- 指定国际化编码所使用的字符集 -->	
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+	<constant name="struts.devMode" value="true"/>
+	<!-- 所有的Action定义都应该放在package下 -->
+	<package name="common" extends="struts-default" >
+
+		<!-- 定义全局Result映射 -->
+		<global-results>
+			<result name="error">/error.jsp</result>
+			<result name="login">/index.jsp</result>
+			<result name="exception">/exception.jsp</result>
+		</global-results>
+	<global-exception-mappings>
+			
+		<exception-mapping exception="java.lang.Exception" 
+				result="exception"/>
+	</global-exception-mappings>
+		<!-- 登陆 -->
+		<action name="login" class="com.yingming.blogsystem.action.LoginAction">
+			<result name="input">/index.jsp</result>
+			<result name="success">blog_read.jsp</result>
+		</action>
+		<!-- 注册 -->
+		<action name="register" class="com.yingming.blogsystem.action.RegisterAction">
+			<result name="input">/register.jsp</result>
+			<result name="success">blog_read.jsp</result>
+		</action>
+		<action name="*">
+			<result>/{1}.jsp</result>
+		</action>
+
+	</package>
+</struts>

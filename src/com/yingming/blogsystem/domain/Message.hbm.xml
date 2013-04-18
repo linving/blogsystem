@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Hibernate映射文件的根元素 -->
+<hibernate-mapping package="com.yingming.blogsystem.domain">
+	<class name="Message" table="tb_message" >
+		<!-- 使用读写缓存 -->
+		<cache usage="read-write"/>
+		<!-- 映射标识属性 -->
+		<id	name="messageId" type="integer" column="messageId">
+			<!-- 指定使用identity主键生成策略 -->
+			<generator class="identity"/>
+		</id>
+		<!-- 映射普通属性 -->
+		<property name="messageContent" column="messageContent"	 type="string" not-null="true"/>
+		<property name="IPAddress" column="IPAddress"	 type="string" />
+		<property name="savaTime">
+			<column name="savaTime" sql-type="datetime" not-null="true"/>
+		</property>
+		<!-- 映射和User的关联关系 -->
+		<many-to-one name="user" column="userId" 
+			class="User" lazy="false"/>
+		
+		<set name="comments" inverse="true">
+				<key column="userId" />
+				<one-to-many class="Comment"/>
+		</set>
+	</class>
+</hibernate-mapping>
