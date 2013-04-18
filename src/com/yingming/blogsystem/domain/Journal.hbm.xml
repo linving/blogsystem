@@ -16,8 +16,8 @@
 		<property name="journalTitle" column="journalTitle"	 type="string" not-null="true"/>
 		<property name="journalContent" column="journalContent"	 type="string" not-null="true"/>
 		<property name="clickCounts" column="clickCounts"	 type="integer" not-null="true"/>
-		<property name="savaTime">
-			<column name="savaTime" sql-type="datetime" not-null="true"/>
+		<property name="saveTime">
+			<column name="saveTime" sql-type="datetime" not-null="true"/>
 		</property>
 		<!-- 映射和User的关联关系 -->
 		<many-to-one name="user" column="userId" 

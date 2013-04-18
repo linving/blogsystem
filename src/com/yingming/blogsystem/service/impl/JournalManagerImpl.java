@@ -25,6 +25,30 @@ public class JournalManagerImpl implements JournalManager{
 		journalDao.delete(journalId);
 		return OP_SUCC;
 	}
+	public UserDao getUserDao() {
+		return userDao;
+	}
+	public void setUserDao(UserDao userDao) {
+		this.userDao = userDao;
+	}
+	public CommentDao getCommentDao() {
+		return commentDao;
+	}
+	public void setCommentDao(CommentDao commentDao) {
+		this.commentDao = commentDao;
+	}
+	public JournalDao getJournalDao() {
+		return journalDao;
+	}
+	public void setJournalDao(JournalDao journalDao) {
+		this.journalDao = journalDao;
+	}
+	public MessageDao getMessageDao() {
+		return messageDao;
+	}
+	public void setMessageDao(MessageDao messageDao) {
+		this.messageDao = messageDao;
+	}
 	
 	
 

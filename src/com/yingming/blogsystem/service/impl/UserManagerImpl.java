@@ -72,7 +72,10 @@ public class UserManagerImpl implements UserManager {
 	public int addUser(User user) {
 		
 		if(userDao.findByAccount(user.getUserAccount()).size()==0){
-			user.setRegisterTime(new Date());
+			Date date = new Date();
+			
+			user.setRegisterTime(date);
+			System.out.println("=====");
 			userDao.save(user);
 			return this.OP_SUCC;
 		}

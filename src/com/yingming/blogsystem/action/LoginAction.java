@@ -26,12 +26,13 @@ public class LoginAction extends ManagerBaseAction {
 	}
 
 	public String execute() throws Exception {
+		System.out.println("====="+userAccount);
 		ActionContext ctx = ActionContext.getContext();
 		int result = userManager.validLogin(userAccount, userPass);
-		User user;
-		user = userManager.getUserByAccountAndPass(userAccount, userPass);
-
+		
 		if (result == userManager.OP_SUCC) {
+			User user;
+			user = userManager.getUserByAccountAndPass(userAccount, userPass);
 			ctx.getSession().put("user", user);
 			return this.SUCCESS;
 		} else {

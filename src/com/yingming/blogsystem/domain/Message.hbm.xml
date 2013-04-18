@@ -15,16 +15,12 @@
 		<!-- 映射普通属性 -->
 		<property name="messageContent" column="messageContent"	 type="string" not-null="true"/>
 		<property name="IPAddress" column="IPAddress"	 type="string" />
-		<property name="savaTime">
-			<column name="savaTime" sql-type="datetime" not-null="true"/>
+		<property name="saveTime">
+			<column name="saveTime" sql-type="datetime" not-null="true"/>
 		</property>
 		<!-- 映射和User的关联关系 -->
 		<many-to-one name="user" column="userId" 
 			class="User" lazy="false"/>
 		
-		<set name="comments" inverse="true">
-				<key column="userId" />
-				<one-to-many class="Comment"/>
-		</set>
 	</class>
 </hibernate-mapping>
