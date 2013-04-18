@@ -9,6 +9,7 @@ public class LoginAction extends ManagerBaseAction {
 	private String userAccount;
 	
 	private String userPass;
+	
 
 	public String getUserAccount() {
 		return userAccount;
