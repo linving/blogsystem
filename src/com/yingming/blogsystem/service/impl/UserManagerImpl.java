@@ -73,8 +73,8 @@ public class UserManagerImpl implements UserManager {
 		
 		if(userDao.findByAccount(user.getUserAccount()).size()==0){
 			Date date = new Date();
-			
-			user.setRegisterTime(date);
+		//	date.hashCode();
+		//	user.setRegisterTime(date);
 			System.out.println("=====");
 			userDao.save(user);
 			return this.OP_SUCC;

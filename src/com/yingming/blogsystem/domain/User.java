@@ -1,6 +1,7 @@
 package com.yingming.blogsystem.domain;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -16,7 +17,7 @@ public class User implements Serializable {
 
 	private String userPass;
 	
-	private Date registerTime;
+	private Timestamp registerTime;
 	
 	private Set<Message> messages = new HashSet<Message>();
 	
@@ -40,7 +41,7 @@ public class User implements Serializable {
 		return registerTime;
 	}
 
-	public void setRegisterTime(Date registerTime) {
+	public void setRegisterTime(Timestamp registerTime) {
 		this.registerTime = registerTime;
 	}
 
