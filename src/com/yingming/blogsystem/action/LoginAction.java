@@ -7,6 +7,7 @@ import com.yingming.blogsystem.domain.*;
 public class LoginAction extends ManagerBaseAction {
 
 	private String userAccount;
+	
 	private String userPass;
 
 	public String getUserAccount() {
