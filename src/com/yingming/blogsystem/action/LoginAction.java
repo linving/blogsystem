@@ -28,7 +28,7 @@ public class LoginAction extends ManagerBaseAction {
 	}
 
 	public String execute() throws Exception {
-		System.out.println("====="+userAccount);
+//		System.out.println("====="+userAccount);
 		ActionContext ctx = ActionContext.getContext();
 		int result = userManager.validLogin(userAccount, userPass);
 		

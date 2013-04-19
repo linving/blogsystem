@@ -228,3 +228,33 @@ img.index_user_face{
 	padding: 20px 30px 10px 30px;
 	
 }
+
+.listMessageBox{
+	width:100%;
+	border-bottom:1px dashed #000;
+}
+
+.messageTitle{
+	
+}
+
+p.messageContent{
+	font-size:20px;		
+}
+
+#writeMessageBox{
+	width:100%;
+}
+
+#writeMessageTitle{
+	font-size:25px;
+	color:red;	
+}
+
+#writeMessageContent{
+	width:100%;
+}
+
+#writeMessageSubmitButton{
+	
+}

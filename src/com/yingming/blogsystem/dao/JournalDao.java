@@ -1,6 +1,9 @@
 package com.yingming.blogsystem.dao;
 
+import java.util.List;
+
 import com.yingming.blogsystem.domain.Journal;
+import com.yingming.blogsystem.domain.Message;
 
 public interface JournalDao {
 	
@@ -13,5 +16,11 @@ public interface JournalDao {
 	void delete(Journal journal);
 
 	void delete(Integer journalId);
+	
+	List<Journal> findAllByUserId(int userId);
+	
+	List<Journal> findAllByUserId(int userId,int offset,int pageSize);
+	
+	int getAllJournalCountsByUserId(int userId);
 
 }

@@ -15,13 +15,13 @@
 	</div>
 	<div id="navigation">
 		<ul>
-			<li><a href="#" class="first">About Us</a></li>
-			<li><a href="#">Services</a></li>
-			<li><a href="#">Solutions</a></li>
-			<li><a href="#">Partners</a></li>
-			<li><a href="#">Training</a></li>
+			<li><a href="#" class="first">Member</a></li>
+			<li><a href="#">undetermined</a></li>
+			<li><a href="#">undetermined</a></li>
+			<li><a href="#">undetermined</a></li>
+			<li><a href="listMessage">Your Advice</a></li>
 			<li><a href="#">Support</a></li>
-			<li><a href="#">Contact</a></li>
+			<li><a href="#">About Us</a></li>
 		</ul>
 	</div>
 </div>

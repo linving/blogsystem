@@ -1,6 +1,7 @@
 package com.yingming.blogsystem.domain;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -15,7 +16,7 @@ public class Journal implements Serializable{
 	
 	private String journalContent;
 	
-	private Date saveTime;
+	private Timestamp saveTime;
 	
 	private Integer clickCounts;
 	
@@ -27,12 +28,12 @@ public class Journal implements Serializable{
 		
 	}
 	
-	public Journal(User user,String journalTitle,String journalContent, Date saveTime,
+	public Journal(User user,String journalTitle,String journalContent,
 			Integer clickCounts){
 		this.user = user;
 		this.journalTitle = journalTitle;
 		this.journalContent = journalContent;
-		this.saveTime = saveTime;
+//		this.saveTime = saveTime;
 		this.clickCounts = clickCounts;
 		
 	}
@@ -57,7 +58,7 @@ public class Journal implements Serializable{
 	public Date getSaveTime() {
 		return saveTime;
 	}
-	public void setSaveTime(Date saveTime) {
+	public void setSaveTime(Timestamp saveTime) {
 		this.saveTime = saveTime;
 	}
 	public Integer getClickCounts() {

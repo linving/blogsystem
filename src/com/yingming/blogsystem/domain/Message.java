@@ -1,6 +1,7 @@
 package com.yingming.blogsystem.domain;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class Message implements Serializable{
@@ -13,7 +14,7 @@ public class Message implements Serializable{
 	
 	private String IPAddress;
 	
-	private Date saveTime;
+	private Timestamp saveTime;
 	
 	private User user;
 	
@@ -21,10 +22,10 @@ public class Message implements Serializable{
 		
 	}
 	
-	public Message(User user,String messageContent,Date saveTime,String IPAddress){
+	public Message(User user,String messageContent,String IPAddress){
 		this.user = user;
 		this.messageContent = messageContent;
-		this.saveTime = saveTime;
+//		this.saveTime = saveTime;
 		this.IPAddress = IPAddress;
 	}
 	public Integer getMessageId() {
@@ -48,7 +49,7 @@ public class Message implements Serializable{
 	public Date getSaveTime() {
 		return saveTime;
 	}
-	public void setSaveTime(Date saveTime) {
+	public void setSaveTime(Timestamp saveTime) {
 		this.saveTime = saveTime;
 	}
 	public User getUser() {

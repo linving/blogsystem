@@ -29,11 +29,11 @@
 <div id="content">
 	<div id="page">
 		<div id="write_blog">
-		  <form id="form1" name="form1" method="post" action="">
+		  <form id="form1" name="form1" method="post" action="writeJournal">
 		    <table width="100%" border="0">
 		      <tr>
-              	<td width="7%" align="right" valign="top">标题:</td>
-		        <td width="93%"><input name="textfield" type="text" id="textfield" size="100" /></td>
+              	<td width="7%" align="right" valign="top">标题：</td>
+		        <td width="93%"><input name="title" type="text" id="textfield" size="111" /></td>
 	          </tr>
 		      <tr>
               	<td align="right" valign="top"></td>
@@ -41,7 +41,7 @@
 	          </tr>
 		      <tr>
               	<td align="right" valign="top">内容：</td>
-		        <td align="left"><textarea name="textarea" id="textarea" cols="100" rows="10"></textarea></td>
+		        <td align="left"><textarea name="content" id="textarea" cols="80" rows="10"></textarea></td>
 	          </tr>
 		      <tr>
               	<td align="right" valign="top"></td>

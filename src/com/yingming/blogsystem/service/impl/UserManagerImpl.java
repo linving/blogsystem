@@ -15,6 +15,12 @@ public class UserManagerImpl implements UserManager {
 	
 	
 	
+	@Override
+	public User getUserByUserId(int userId) {
+		return userDao.get(userId);
+	}
+
+
 	public CommentDao getCommentDao() {
 		return commentDao;
 	}
@@ -72,11 +78,11 @@ public class UserManagerImpl implements UserManager {
 	public int addUser(User user) {
 		
 		if(userDao.findByAccount(user.getUserAccount()).size()==0){
-			Date date = new Date();
+		//	Date date = new Date();
 		//	date.hashCode();
 		//	user.setRegisterTime(date);
-			System.out.println("=====");
-			userDao.save(user);
+		//	System.out.println("=====");
+			userDao.save(user);//数据库中的注册时间设置为自动记录
 			return this.OP_SUCC;
 		}
 		else {
@@ -101,8 +107,12 @@ public class UserManagerImpl implements UserManager {
 
 	@Override
 	public User getUserByAccountAndPass(String userAccount, String userPass) {
-		// TODO Auto-generated method stub
-		return null;
+		User user=null;
+		if(userDao.findByAccountAndPass(userAccount, userPass).size() == 0){
+			return null;
+		}
+		user = userDao.findByAccountAndPass(userAccount, userPass).get(0);
+		return user;
 	}
 
 

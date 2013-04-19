@@ -2,6 +2,7 @@ package com.yingming.blogsystem.service.impl;
 
 
 import java.util.Date;
+import java.util.List;
 
 import com.yingming.blogsystem.dao.*;
 import com.yingming.blogsystem.service.*;
@@ -13,12 +14,23 @@ public class MessageManagerImpl implements MessageManager{
 	private CommentDao commentDao;
 	private JournalDao journalDao;
 	private MessageDao messageDao;
+	
+	
+	@Override
+	public int getTotalMessageCounts() {
+		return messageDao.getAllMessageCounts();
+	}
+
+	@Override
+	public List<Message> listMessage(int offset, int pageSize) {
+		return messageDao.findAll(offset, pageSize);
+	}
 
 	@Override
 	public int addMessage(Integer userId, String messageContent) {
 		User user = userDao.get(userId);
 		String IPAddress="0.0.0.0";
-		Message message = new Message(user,messageContent,new Date(),IPAddress);
+		Message message = new Message(user,messageContent,IPAddress);
 		messageDao.save(message);
 		return OP_SUCC;
 	}

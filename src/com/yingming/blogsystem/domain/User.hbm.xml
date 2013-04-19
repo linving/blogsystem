@@ -19,8 +19,7 @@
 			not-null="true" length="20"/>
 		<property name="userName" column="userName"	type="string"
 			not-null="true" length="20" />
-		<property name="registerTime" type="java.sql.Timestamp" column="registerTime"
-		/>
+		<property name="registerTime" type="java.sql.Timestamp" column="registerTime"/>
 		<set name="messages" inverse="true">
 				<key column="userId" />
 				<one-to-many class="Message"/>

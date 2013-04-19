@@ -18,7 +18,7 @@ public interface UserManager {
 	
 	int addUser(User user);
 	
-	
+	User getUserByUserId(int userId);
 
 	User getUserByAccountAndPass(String userAccount, String userPass);
 

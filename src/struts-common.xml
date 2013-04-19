@@ -33,6 +33,28 @@
 			<result name="input">/register.jsp</result>
 			<result name="success">blog_read.jsp</result>
 		</action>
+		<!-- 查看留言 -->
+		<action name="listMessage" class="com.yingming.blogsystem.action.ListMessageAction">
+			<result name="success">/listMessage.jsp</result>
+			<param name="pageSize">5</param>
+		</action>
+		<!-- 增加留言 -->
+		<action name="writeMessage" class="com.yingming.blogsystem.action.WriteMessageAction">
+			<result type="redirectAction">
+					<param name="actionName">listMessage</param>
+			</result>
+		</action>
+		<!-- 查看博客 -->
+		<action name="listJournal" class="com.yingming.blogsystem.action.ListJournalAction">
+			<result name="success">/listJournal.jsp</result>
+			<param name="pageSize">5</param>
+		</action>
+		<!-- 增加博客 -->
+		<action name="writeJournal" class="com.yingming.blogsystem.action.WriteJournalAction">
+			<result type="redirectAction">
+					<param name="actionName">listJournal</param>
+			</result>
+		</action>
 		<action name="*">
 			<result>/{1}.jsp</result>
 		</action>
