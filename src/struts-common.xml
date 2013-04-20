@@ -45,15 +45,12 @@
 			</result>
 		</action>
 		<!-- 查看博客 -->
-		<action name="listJournal" class="com.yingming.blogsystem.action.ListJournalAction">
-			<result name="success">/listJournal.jsp</result>
-			<param name="pageSize">5</param>
+		<action name="showMyJournal" class="com.yingming.blogsystem.action.showMyJournalAction">
+			<result name="success">/showMyJournal.jsp</result>
 		</action>
 		<!-- 增加博客 -->
 		<action name="writeJournal" class="com.yingming.blogsystem.action.WriteJournalAction">
-			<result type="redirectAction">
-					<param name="actionName">listJournal</param>
-			</result>
+			<result name="success">/showMyJournal.jsp</result>
 		</action>
 		<action name="*">
 			<result>/{1}.jsp</result>

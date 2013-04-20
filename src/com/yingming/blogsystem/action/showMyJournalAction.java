@@ -6,7 +6,7 @@ import com.opensymphony.xwork2.ActionContext;
 import com.yingming.blogsystem.action.base.ManagerBaseAction;
 import com.yingming.blogsystem.domain.*;
 
-public class ListJournalAction extends ManagerBaseAction {
+public class showMyJournalAction extends ManagerBaseAction {
 	private List<Journal> journals;
 	private int totalRecordCounts;//总记录数
 	private int totalPageCounts;//总页数
@@ -16,11 +16,11 @@ public class ListJournalAction extends ManagerBaseAction {
 	
 	@Override
 	public String execute() throws Exception {
-
-		User user = userManager.getUserByUserId(userId);
+		ActionContext ctx = ActionContext.getContext();
+		User user = (User) ctx.getSession().get("user");
+		int userId = user.getUserId();
 		if(user == null){
-			ActionContext ctx = ActionContext.getContext();
-			ctx.getSession().put("tip", "无法获得要用户文章！没有此ID的用户...");
+			ctx.getSession().put("tip", "无法获得你的session，请登录...");
 			return ERROR;
 		}
 		totalRecordCounts = journalManager.getJournalTotalCountsByUserId(userId);
