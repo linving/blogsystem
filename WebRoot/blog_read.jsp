@@ -15,13 +15,9 @@
 	</div>
 	<div id="navigation">
 		<ul>
-			<li><a href="#" class="first">Member</a></li>
-			<li><a href="#">undetermined</a></li>
-			<li><a href="#">undetermined</a></li>
-			<li><a href="#">undetermined</a></li>
-			<li><a href="listMessage">Your Advice</a></li>
-			<li><a href="#">Support</a></li>
-			<li><a href="#">About Us</a></li>
+			
+			<li><a href="write_blog.jsp">write blog</a></li>
+			
 		</ul>
 	</div>
 </div>
