@@ -3,8 +3,6 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<%@ taglib uri="http://ckeditor.com" prefix="ckeditor" %>
-<%@ page import="com.ckeditor.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -14,19 +12,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta name="description" content="" />
 <link href="css/layout.css" rel="stylesheet" type="text/css" media="screen" />
 <script src="ckeditor/ckeditor.js"></script>
-<script type="text/javascript">
-CKEDITOR.replace( 'journalContent', {
-	toolbarGroups: [
-		{ name: 'document',	   groups: [ 'mode', 'document' ] },			// Displays document group with its two subgroups.
- 		{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },			// Group's name will be used to create voice label.
- 		'/',																// Line break - next group will be placed in new line.
- 		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
- 		{ name: 'links' }
-	]
 
-	// NOTE: Remember to leave 'toolbar' property with the default value (null).
-});
-</script>
 </head>
 <body>
 <div id="header">
@@ -62,7 +48,7 @@ CKEDITOR.replace( 'journalContent', {
 	          </tr>
 		      <tr>
               	<td align="right" valign="top">内容：</td>
-		        <td align="left"><textarea  name="journalContent" id="journalContent" cols="80" rows="10"></textarea></td>
+		        <td align="left"><textarea class="ckeditor" name="journalContent" id="journalContent" cols="80" rows="10"></textarea></td>
 	          </tr>
 		      <tr>
               	<td align="right" valign="top"></td>
@@ -80,10 +66,6 @@ CKEDITOR.replace( 'journalContent', {
 <div id="footer">
 	<p>&copy;&nbsp;Copyright 2009. All Rights Reserved. template design by <a href="http://www.cssMoban.com" class="links">cssMoban.com</a> </p>
 </div>
-<% 
-	CKEditorConfig settings = new CKEditorConfig();
-	settings.addConfigValue("toolbar","[[ 'Source', '-', 'Bold', 'Italic' ]]");
-%>
-<ckeditor:replace replace="journalContent" basePath="/ckeditor/" config="<%=settings %>" />
+
 </body>
 </html>
