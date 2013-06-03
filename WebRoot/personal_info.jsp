@@ -13,7 +13,7 @@
 	<div id="content">
 	<div id="page">
 		<div id="column1">
-			<form action="updateUserInfo" method="post">
+			<form action="updatePersonalInfo" method="post">
             <table width="100%" border="0">
   <tr>
     <td width="30%"align="right">用户名</td>
@@ -21,7 +21,7 @@
   </tr>
   <tr>
     <td align="right">真实姓名</td>
-    <td><input type="text" name="userNAme" value="<s:property value="user.userName"/>"/></td>
+    <td><input type="text" name="userName" value="<s:property value="user.userName"/>"/></td>
   </tr>
   <tr>
     <td align="right">电子邮件</td>

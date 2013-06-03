@@ -57,6 +57,18 @@
 				method="show">
 			<result name="success">/personal_info.jsp</result>
 		</action>
+		<!-- 更新个人信息 -->
+		<action name="updatePersonalInfo" class="com.yingming.blogsystem.action.PersonalInfoAction"
+				method="updateInfo">
+			<result type="redirectAction">
+					<param name="actionName">showPersonalInfo</param>
+			</result>
+		</action>
+		<!-- 修改用户密码 -->
+		<action name="updateUserPassword" class="com.yingming.blogsystem.action.PersonalInfoAction"
+				method="updatePassword">
+			<result name="success">/succ.jsp</result>
+		</action>
 		<action name="*">
 			<result>/{1}.jsp</result>
 		</action>

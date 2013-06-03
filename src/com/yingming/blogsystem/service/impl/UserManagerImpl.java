@@ -16,6 +16,13 @@ public class UserManagerImpl implements UserManager {
 	
 	
 	@Override
+	public int updateUser(User user) {
+		userDao.update(user);
+		return this.OP_SUCC;
+	}
+
+
+	@Override
 	public User getUserByUserId(int userId) {
 		return userDao.get(userId);
 	}
