@@ -58,7 +58,7 @@ public class UserDaoImpl extends YeekuHibernateDaoSupport implements UserDao {
 
 	@Override
 	public List<User> findAll(int offset, int pageSize) {
-		return this.findByPage("from User ", offset, pageSize);
+		return this.findByPage("from User order by userId DESC", offset, pageSize);
 	}
 
 	@Override

@@ -10,6 +10,7 @@
 </head>
 <body>
 <s:include value="user_navigation.jsp" />
+
 <div id="content">
 	<div id="page">
 		<div id="column1">

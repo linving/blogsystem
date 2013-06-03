@@ -27,12 +27,16 @@ public class PersonalInfoAction extends ManagerBaseAction{
 	private String uploadFileName;
 	private String savePath;
 	
-	User getUserFromSession(){
+	public User getUserFromSession(){
 		User user_temp = null;
 		ActionContext ctx = ActionContext.getContext();
 		user_temp = (User) ctx.getSession().get("user");
 		user_temp = userManager.getUserByUserId(user_temp.getUserId());
 		return user_temp;
+	}
+	public void setUserSession(User user){
+		ActionContext ctx = ActionContext.getContext();
+		ctx.getSession().put("user", user);
 	}
 	public String show() throws Exception {
 		user = getUserFromSession();
@@ -55,8 +59,10 @@ public class PersonalInfoAction extends ManagerBaseAction{
 			user.setMail(mail);
 			user.setBlogName(blogName);
 			user.setBlogDescription(blogDescription);
-			if( userManager.updateUser(user) == userManager.OP_SUCC )
+			if( userManager.updateUser(user) == userManager.OP_SUCC ){
+				setUserSession(user);
 				return SUCCESS;
+			}
 			else {
 				TipSession.setTipInfo("更新用户信息出错。");
 				return ERROR;
@@ -81,8 +87,10 @@ public class PersonalInfoAction extends ManagerBaseAction{
 				return ERROR;
 			}
 			user.setUserPass(newPassword);
-			if( userManager.updateUser(user) == userManager.OP_SUCC )
+			if( userManager.updateUser(user) == userManager.OP_SUCC ){
+				setUserSession(user);
 				return SUCCESS;
+			}
 			else {
 				TipSession.setTipInfo("修改密码出错。");
 				return ERROR;
@@ -124,6 +132,7 @@ public class PersonalInfoAction extends ManagerBaseAction{
 		user.setUserFaceTitle(user.getUserAccount()+"\\"+title);
 		/* 上传完保存到数据库 */
 		if (userManager.updateUser(user) == userManager.OP_SUCC) {
+			setUserSession(user);
 			return SUCCESS;
 		} else {
 			return ERROR;

@@ -1,7 +1,8 @@
+<%@taglib prefix="s" uri="/struts-tags" %>
 <div id="header">
 	<div id="logo">
-		<h1>Business Name</h1>
-		<p><a href="http://www.cssMoban.com" target="_blank">Template Design by cssMoban.com</a></p>
+		<h1><s:property value="#session.user.blogName"/></h1>
+		<p><a href="#" target="_blank"><s:property value="#session.user.blogDescription"/></a></p>
 	</div>
 	<div id="navigation">
 		<ul>

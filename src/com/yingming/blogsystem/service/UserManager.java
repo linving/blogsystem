@@ -24,5 +24,6 @@ public interface UserManager {
 
 	User getUserByAccountAndPass(String userAccount, String userPass);
 
+	List<User> getUserList(int offset,int pageSize);
 	
 }

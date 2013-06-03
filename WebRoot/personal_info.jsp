@@ -20,7 +20,7 @@
     <td width="70%"><s:property value="user.userAccount"/></td>
   </tr>
   <tr>
-    <td align="right">真实姓名</td>
+    <td align="right">昵称</td>
     <td><input type="text" name="userName" value="<s:property value="user.userName"/>"/></td>
   </tr>
   <tr>
@@ -51,12 +51,11 @@
     </td>
   </tr>
   <tr>
-    <td align="right">上传新头像</td>
-    <td><s:file name="upload" label="选择文件"/></td>
-  </tr>
-  <tr>
     <td align="right"></td>
-    <td><s:submit value="上传"/></td>
+    <td>
+    	<s:file name="upload" label="选择文件"/><br/>
+    	<s:submit value="上传"/>
+    </td>
   </tr>
   	</table>
   </s:form>

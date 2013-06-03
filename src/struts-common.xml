@@ -33,7 +33,7 @@
 			<result name="input">/register.jsp</result>
 			<result name="success">blog_read.jsp</result>
 			<!-- 动态设置Action的属性值 -->
-			<param name="defaultUserFaceLocation">/user_face/default/default1.jpg</param>
+			<param name="defaultUserFaceLocation">default/default1.jpg</param>
 		</action>
 		<!-- 查看留言 -->
 		<action name="listMessage" class="com.yingming.blogsystem.action.ListMessageAction">
@@ -81,6 +81,12 @@
 			<result type="redirectAction">
 					<param name="actionName">showPersonalInfo</param>
 			</result>
+		</action>
+		
+		<!-- 获得用户信息 -->
+		<action name="getUserList" class="com.yingming.blogsystem.action.GetUserListAction">
+			<result name="success">/succ.jsp</result>
+			<param name="listCount">10</param>
 		</action>
 		
 		<action name="*">

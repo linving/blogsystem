@@ -23,51 +23,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="content">
 	<div id="page">
 		<div id="column1">
+			<s:action name="getUserList" executeResult="false" var="users"/>
+   			<s:set value="#users.getUsers()" name="userList"/>
+   			<s:iterator value="#userList" id="user">
 			<div class="index_user_face">
-				<a href="#" ><img src="user_face/zgr.jpg" class="index_user_face"/></a>
+				<a href="linkToBlog?userName=<s:property value="#user.userName"/>" ><img src="user_face/<s:property value="#user.userFaceTitle"/>" class="index_user_face"/></a>
+				<p>
+				<a href="linkToBlog?userName=<s:property value="#user.userName"/>" ><img src="user_face/<s:property value="#user.userFaceTitle"/>" class="index_blog_name_link">
+					<s:property value="#user.userName"/>
+				</a>
+				</p>
 			</div>
-			<div class="index_user_face">
-				<a href="#" ><img src="user_face/zgr.jpg" class="index_user_face"/></a>
-			</div>
-			<div class="index_user_face">
-				<a href="#" ><img src="user_face/zgr.jpg" class="index_user_face"/></a>
-			</div>
-			<div class="index_user_face">
-				<a href="#" ><img src="user_face/zgr.jpg" class="index_user_face"/></a>
-			</div>
-			<div class="index_user_face">
-				<a href="#" ><img src="user_face/zgr.jpg" class="index_user_face"/></a>
-			</div>
-			<div class="index_user_face">
-				<a href="#" ><img src="user_face/zgr.jpg" class="index_user_face"/></a>
-			</div>
-			<div class="index_user_face">
-				<a href="#" ><img src="user_face/zgr.jpg" class="index_user_face"/></a>
-			</div>
-			<div class="index_user_face">
-				<a href="#" ><img src="user_face/zgr.jpg" class="index_user_face"/></a>
-			</div>
-			<div class="index_user_face">
-				<a href="#" ><img src="user_face/zgr.jpg" class="index_user_face"/></a>
-			</div>
-			<div class="index_user_face">
-				<a href="#" ><img src="user_face/zgr.jpg" class="index_user_face"/></a>
-			</div>
-			<div class="index_user_face">
-				<a href="#" ><img src="user_face/zgr.jpg" class="index_user_face"/></a>
-			</div>
-			<div class="index_user_face">
-				<a href="#" ><img src="user_face/zgr.jpg" class="index_user_face"/></a>
-			</div>
-			<div class="index_user_face">
-				<a href="#" ><img src="user_face/zgr.jpg" class="index_user_face"/></a>
-			</div>
-			<div class="index_user_face">
-				<a href="#" ><img src="user_face/zgr.jpg" class="index_user_face"/></a>
-			</div>
-			<div class="index_user_face">
-				<a href="#" ><img src="user_face/zgr.jpg" class="index_user_face"/></a>
-			</div>
+			</s:iterator>
 			
 		</div>
 		<div id="column2">
@@ -100,6 +67,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 	<div style="clear: both;">&nbsp;</div>
 </div>
-
+<s:include value="footer.jsp" />
   </body>
 </html>

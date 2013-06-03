@@ -16,6 +16,12 @@ public class UserManagerImpl implements UserManager {
 	
 	
 	@Override
+	public List<User> getUserList(int offset, int pageSize) {
+		return userDao.findAll(offset, pageSize);
+	}
+
+
+	@Override
 	public int updateUser(User user) {
 		userDao.update(user);
 		return this.OP_SUCC;

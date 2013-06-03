@@ -213,14 +213,15 @@ blockquote {
 
 .index_user_face {
 	float:left;
-	width:90px;
-	height:90px;
-	margin:10px;
+	width:108px;
+	height:120px;
+	padding:0px 8px 20px 0px;
+/*	border:#000 solid 1px;*/
 }
 
 img.index_user_face{
-	width:90px;
-	height:90px;
+	width:100px;
+	height:100px;
 }
 
 #write_blog {

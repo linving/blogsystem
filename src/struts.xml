@@ -5,9 +5,6 @@
 <!-- 指定Struts 2配置文件的根元素 -->
 <struts>
 	<include file="struts-common.xml"/>
-	<include file="struts-admin.xml"/>
-	<include file="struts-teacher.xml"/>
-	<include file="struts-student.xml"/>
 	<package name="default" extends="struts-default">
 	
 	</package>

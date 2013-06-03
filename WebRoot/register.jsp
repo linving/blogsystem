@@ -30,10 +30,10 @@
 	<div id="page">
 		<div id="column1">
 		  <form id="form1" name="form1" method="post" action="register">
-		    <table width="105%" border="0">
+		    <table width="100%" border="0">
 		      <tr>
-		        <td width="13%" align="right">账号：</td>
-		        <td width="87%"><input type="text" name="userAccount" id="textfield" /></td>
+		        <td width="20%" align="right">账号：</td>
+		        <td width="80%"><input type="text" name="userAccount" id="textfield" /></td>
 	          </tr>
 		      <tr>
 		        <td align="right">密码：</td>
@@ -47,9 +47,21 @@
 		        <td align="right">用户昵称：</td>
 		        <td><input type="text" name="userName" id="textfield4" /></td>
 	          </tr>
+	          <tr>
+		        <td align="right">电子邮箱：</td>
+		        <td><input type="text" name="mail" id="textfield4" /></td>
+	          </tr>
+	          <tr>
+		        <td align="right">博客名称：</td>
+		        <td><input type="text" name="blogName" id="textfield4" /></td>
+	          </tr>
+	          <tr>
+		        <td align="right">博客签名：</td>
+		        <td><textarea name="blogDescription" id="textarea" cols="45" rows="5"></textarea></td>
+	          </tr>
 		      <tr>
 		        <td>&nbsp;</td>
-		        <td><input type="submit" name="注册" id="button" value="Submit" /></td>
+		        <td><input type="submit" name="Submit" id="button" value="注册" /></td>
 	          </tr>
 	        </table>
 	      </form>
