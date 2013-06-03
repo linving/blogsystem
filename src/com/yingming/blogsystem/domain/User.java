@@ -17,6 +17,14 @@ public class User implements Serializable {
 
 	private String userPass;
 	
+	private String userFaceLocation;
+	
+	private String mail;
+	
+	private String blogName;
+	
+	private String blogDescription;
+	
 	private Timestamp registerTime;
 	
 	private Set<Message> messages = new HashSet<Message>();
@@ -37,6 +45,40 @@ public class User implements Serializable {
 	}
 
 	
+	
+
+	public String getUserFaceLocation() {
+		return userFaceLocation;
+	}
+
+	public void setUserFaceLocation(String userFaceLocation) {
+		this.userFaceLocation = userFaceLocation;
+	}
+
+	public String getMail() {
+		return mail;
+	}
+
+	public void setMail(String mail) {
+		this.mail = mail;
+	}
+
+	public String getBlogName() {
+		return blogName;
+	}
+
+	public void setBlogName(String blogName) {
+		this.blogName = blogName;
+	}
+
+	public String getBlogDescription() {
+		return blogDescription;
+	}
+
+	public void setBlogDescription(String blogDescription) {
+		this.blogDescription = blogDescription;
+	}
+
 	public Date getRegisterTime() {
 		return registerTime;
 	}

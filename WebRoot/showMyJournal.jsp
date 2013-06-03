@@ -21,23 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <div id="header">
-	<div id="logo">
-		<h1>Business Name</h1>
-		<p><a href="http://www.cssMoban.com" target="_blank">Template Design by cssMoban.com</a></p>
-	</div>
-	<div id="navigation">
-		<ul>
-			<li><a href="#" class="first">Member</a></li>
-			<li><a href="#">undetermined</a></li>
-			<li><a href="#">undetermined</a></li>
-			<li><a href="#">undetermined</a></li>
-			<li><a href="listMessage">Your Advice</a></li>
-			<li><a href="#">Support</a></li>
-			<li><a href="#">About Us</a></li>
-		</ul>
-	</div>
-</div>
+   <s:include value="user_navigation.jsp" />
 
 <div id="content">
 	<div id="page">
@@ -61,9 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 	<div style="clear: both;">&nbsp;</div>
 </div>
-<div id="footer">
-	<p>&copy;&nbsp;Copyright 2009. All Rights Reserved. template design by <a href="http://www.cssMoban.com" class="links">cssMoban.com</a> </p>
-</div>
+<s:include value="footer.jsp" />
 
   </body>
 </html>

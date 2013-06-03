@@ -7,6 +7,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<%@taglib prefix="s" uri="/struts-tags" %>
 <title>YingMing Blog System</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
@@ -15,24 +16,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 </head>
 <body>
-<div id="header">
-	<div id="logo">
-		<h1>Business Name</h1>
-		<p><a href="http://www.cssMoban.com" target="_blank">Template Design by cssMoban.com</a></p>
-	</div>
-	<div id="navigation">
-		<ul>
-			<li><a href="#" class="first">About Us</a></li>
-			<li><a href="#">Services</a></li>
-			<li><a href="#">Solutions</a></li>
-			<li><a href="#">Partners</a></li>
-			<li><a href="#">Training</a></li>
-			<li><a href="#">Support</a></li>
-			<li><a href="#">Contact</a></li>
-		</ul>
-	</div>
-</div>
-
+<s:include value="user_navigation.jsp" />
 <div id="content">
 	<div id="page">
 		<div id="write_blog">

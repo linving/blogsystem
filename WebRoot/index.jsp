@@ -3,7 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -19,23 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <div id="header">
-	<div id="logo">
-		<h1>YingMing Blog System</h1>
-		<p><a href="#" target="_blank">Design by YingMing</a></p>
-	</div>
-	<div id="navigation">
-		<ul>
-			<li><a href="#" class="first">Member</a></li>
-			<li><a href="#">undetermined</a></li>
-			<li><a href="#">undetermined</a></li>
-			<li><a href="#">undetermined</a></li>
-			<li><a href="listMessage">Your Advice</a></li>
-			<li><a href="#">Support</a></li>
-			<li><a href="#">About Us</a></li>
-		</ul>
-	</div>
-	</div>
+	<s:include value="top_navigation.jsp" />
 	<div id="content">
 	<div id="page">
 		<div id="column1">
@@ -116,8 +100,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 	<div style="clear: both;">&nbsp;</div>
 </div>
-<div id="footer">
-	<p>&copy;&nbsp;Copyright 2013. All Rights Reserved. Design by YingMing </p>
-</div>
+
   </body>
 </html>

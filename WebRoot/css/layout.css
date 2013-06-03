@@ -1,4 +1,3 @@
-
 * {
 	margin: 0;
 	padding: 0;
@@ -13,47 +12,6 @@ body {
 	font-size: 13px;
 	color: #000000;
 }
-
-p, ul, ol {
-	margin: 0px;
-	padding: 0px;
-	line-height: 23px;
-}
-
-h1, h2, h3 {
-	margin: 0px;
-	padding: 0px;
-}
-
-h1 {
-	font-size: 2em;
-}
-
-h2 {
-	font-size: 1.4em;
-}
-
-h3 {
-	font-size: 1em;
-}
-
-p, ul, ol {
-	margin-top: 1.5em;
-}
-
-ul, ol {
-	margin-left: 3em;
-}
-
-a {
-	color: #9CC54F;
-}
-
-blockquote {
-	margin-left: 3em;
-	margin-right: 3em;
-}
-
 #header {
 	width: 900px;
 	height: 127px;
@@ -130,6 +88,47 @@ blockquote {
 	color: #C8C8C8;
 }
 
+p, ul, ol {
+	margin: 0px;
+	padding: 0px;
+	line-height: 23px;
+}
+
+h1, h2, h3 {
+	margin: 0px;
+	padding: 0px;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.4em;
+}
+
+h3 {
+	font-size: 1em;
+}
+
+p, ul, ol {
+	margin-top: 1.5em;
+}
+
+ul, ol {
+	margin-left: 3em;
+}
+
+a {
+	color: #9CC54F;
+}
+
+blockquote {
+	margin-left: 3em;
+	margin-right: 3em;
+}
+
+
 #splash {
 	width: 900px;
 	height: 300px;
@@ -151,7 +150,7 @@ blockquote {
 	float: left;
 	width: 580px;
 	padding-right: 30px;
-	border:#000 solid 1px;
+/*	border:#000 solid 1px;*/
 }
 
 #column1 h2 {
@@ -167,7 +166,7 @@ blockquote {
 #column2 {
 	float: right;
 	width: 260px;
-	border:#000 solid 1px;
+/*	border:#000 solid 1px;*/
 }
 
 #column2 h2 {
@@ -179,6 +178,8 @@ blockquote {
 	font-weight: normal;
 	color: #525250;
 }
+
+
 
 .separator {
 	background: url(../images/image03.jpg) repeat-x left bottom;

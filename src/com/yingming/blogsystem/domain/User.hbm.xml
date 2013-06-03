@@ -19,6 +19,14 @@
 			not-null="true" length="20"/>
 		<property name="userName" column="userName"	type="string"
 			not-null="true" length="20" />
+		<property name="mail" column="mail"	type="string"
+			not-null="false" length="100" />
+		<property name="blogName" column="blogName"	type="string"
+			not-null="false" length="100" />
+		<property name="blogDescription" column="blogDescription"	type="string"
+			not-null="false" length="200" />
+		<property name="userFaceLocation" column="userFaceLocation"	type="string"
+			not-null="false" length="200" />
 		<property name="registerTime" type="java.sql.Timestamp" column="registerTime"/>
 		<set name="messages" inverse="true">
 				<key column="userId" />

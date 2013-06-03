@@ -52,6 +52,11 @@
 		<action name="writeJournal" class="com.yingming.blogsystem.action.WriteJournalAction">
 			<result name="success">/showMyJournal.jsp</result>
 		</action>
+		<!-- 用户查看个人信息 -->
+		<action name="showPersonalInfo" class="com.yingming.blogsystem.action.PersonalInfoAction"
+				method="show">
+			<result name="success">/personal_info.jsp</result>
+		</action>
 		<action name="*">
 			<result>/{1}.jsp</result>
 		</action>

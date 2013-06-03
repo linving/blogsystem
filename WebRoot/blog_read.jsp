@@ -2,26 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<%@taglib prefix="s" uri="/struts-tags" %>
 <title>YingMing Blog System</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="css/layout.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
 <body>
-<div id="header">
-	<div id="logo">
-		<h1>Business Name</h1>
-		<p><a href="http://www.cssMoban.com" target="_blank">Template Design by cssMoban.com</a></p>
-	</div>
-	<div id="navigation">
-		<ul>
-			
-			<li><a href="write_blog.jsp">write blog</a></li>
-			
-		</ul>
-	</div>
-</div>
-
+<s:include value="user_navigation.jsp" />
 <div id="content">
 	<div id="page">
 		<div id="column1">
@@ -47,8 +35,6 @@
 	</div>
 	<div style="clear: both;">&nbsp;</div>
 </div>
-<div id="footer">
-	<p>&copy;&nbsp;Copyright 2009. All Rights Reserved. template design by <a href="http://www.cssMoban.com" class="links">cssMoban.com</a> </p>
-</div>
+<s:include value="footer.jsp" />
 </body>
 </html>
