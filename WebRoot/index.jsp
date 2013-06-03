@@ -29,7 +29,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="index_user_face">
 				<a href="linkToBlog?userName=<s:property value="#user.userName"/>" ><img src="user_face/<s:property value="#user.userFaceTitle"/>" class="index_user_face"/></a>
 				<p>
-				<a href="linkToBlog?userName=<s:property value="#user.userName"/>" ><img src="user_face/<s:property value="#user.userFaceTitle"/>" class="index_blog_name_link">
+				<a href="linkToBlog?userName=<s:property value="#user.userName"/>"  class="index_blog_name_link">
 					<s:property value="#user.userName"/>
 				</a>
 				</p>

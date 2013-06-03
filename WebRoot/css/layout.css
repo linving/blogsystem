@@ -214,8 +214,8 @@ blockquote {
 .index_user_face {
 	float:left;
 	width:108px;
-	height:120px;
-	padding:0px 8px 20px 0px;
+	height:100px;
+	padding:0px 8px 0px 0px;
 /*	border:#000 solid 1px;*/
 }
 
