@@ -32,6 +32,8 @@
 		<action name="register" class="com.yingming.blogsystem.action.RegisterAction">
 			<result name="input">/register.jsp</result>
 			<result name="success">blog_read.jsp</result>
+			<!-- 动态设置Action的属性值 -->
+			<param name="defaultUserFaceLocation">/user_face/default/default1.jpg</param>
 		</action>
 		<!-- 查看留言 -->
 		<action name="listMessage" class="com.yingming.blogsystem.action.ListMessageAction">
@@ -69,6 +71,18 @@
 				method="updatePassword">
 			<result name="success">/succ.jsp</result>
 		</action>
+		<!-- 上传头像 -->
+		<action name="updateUserFace"
+			class="com.yingming.blogsystem.action.PersonalInfoAction"
+				method="updateUserFace">
+			<!-- 动态设置Action的属性值 -->
+			<param name="savePath">/user_face</param>
+			<!-- 配置Struts 2默认的视图页面 -->
+			<result type="redirectAction">
+					<param name="actionName">showPersonalInfo</param>
+			</result>
+		</action>
+		
 		<action name="*">
 			<result>/{1}.jsp</result>
 		</action>

@@ -85,10 +85,7 @@ public class UserManagerImpl implements UserManager {
 	public int addUser(User user) {
 		
 		if(userDao.findByAccount(user.getUserAccount()).size()==0){
-		//	Date date = new Date();
-		//	date.hashCode();
-		//	user.setRegisterTime(date);
-		//	System.out.println("=====");
+		
 			userDao.save(user);//数据库中的注册时间设置为自动记录
 			return this.OP_SUCC;
 		}

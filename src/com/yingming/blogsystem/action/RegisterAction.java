@@ -9,6 +9,7 @@ public class RegisterAction extends ManagerBaseAction{
 	private String userAccount;
 	private String userPass;
 	private String userName;
+	private String defaultUserFaceLocation;
 	public String getUserAccount() {
 		return userAccount;
 	}
@@ -36,6 +37,8 @@ public class RegisterAction extends ManagerBaseAction{
 			return "error";
 		}
 		User user = new User(userAccount,userName,userPass);
+		//用户注册时设置默认头像
+		user.setUserFaceTitle("default\\default1.jpg");
 		int result = userManager.addUser(user);
 		if (result == userManager.OP_SUCC) {
 			ctx.getSession().put("user", user);
@@ -45,4 +48,11 @@ public class RegisterAction extends ManagerBaseAction{
 		}
 
 	}
+	public String getDefaultUserFaceLocation() {
+		return defaultUserFaceLocation;
+	}
+	public void setDefaultUserFaceLocation(String defaultUserFaceLocation) {
+		this.defaultUserFaceLocation = defaultUserFaceLocation;
+	}
+	
 }

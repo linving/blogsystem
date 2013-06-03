@@ -1,9 +1,16 @@
 package com.yingming.blogsystem.action;
 
+
 import com.opensymphony.xwork2.ActionContext;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+import org.apache.struts2.ServletActionContext;
+
 import com.yingming.blogsystem.action.base.ManagerBaseAction;
 import com.yingming.blogsystem.domain.User;
-import com.yingming.blogsystem.support.TipSession;
+import com.yingming.blogsystem.support.*;
 
 public class PersonalInfoAction extends ManagerBaseAction{
 
@@ -15,6 +22,10 @@ public class PersonalInfoAction extends ManagerBaseAction{
 	private String currentPassword;
 	private String newPassword;
 	private String confirmNewPassword;
+	private File upload;
+	private String uploadContentType;
+	private String uploadFileName;
+	private String savePath;
 	
 	User getUserFromSession(){
 		User user_temp = null;
@@ -78,6 +89,47 @@ public class PersonalInfoAction extends ManagerBaseAction{
 			}
 		}
 	}
+	
+	public String updateUserFace() throws Exception {
+		user = getUserFromSession();
+		if(user == null){
+			TipSession.setTipInfo("无法获得用户session，请重新登陆。");
+			return ERROR;
+		}
+		
+		String title = getUploadFileName();
+		if(title == null){
+			TipSession.setTipInfo("无法获取头像文件名。");
+			return ERROR;
+		}
+	//	System.out.println("****getUploadFileName="+title);
+		/* 获得要保存头像的目录 */
+		String saveDir = getSavePath() + "//" + user.getUserAccount();
+		String saveLocation = saveDir + "//" + title;
+		System.out.println("****saveLocation="+saveLocation);
+		/* 先创建相应文件夹 */
+		if( !FileOperation.makeFolder(saveDir) ){
+			TipSession.setTipInfo("以用户账号创建文件夹时出错。");
+			return ERROR;
+		}
+		/* 开始上传 */
+		FileOutputStream fos = new FileOutputStream(saveLocation);
+		FileInputStream fis = new FileInputStream(getUpload());
+		byte[] buffer = new byte[1024];
+		int len = 0;
+		while ((len = fis.read(buffer)) > 0) {
+			fos.write(buffer, 0, len);
+		}
+		fos.close();
+		user.setUserFaceTitle(user.getUserAccount()+"\\"+title);
+		/* 上传完保存到数据库 */
+		if (userManager.updateUser(user) == userManager.OP_SUCC) {
+			return SUCCESS;
+		} else {
+			return ERROR;
+		}
+		
+	}
 	public User getUser() {
 		return user;
 	}
@@ -140,6 +192,32 @@ public class PersonalInfoAction extends ManagerBaseAction{
 
 	public void setConfirmNewPassword(String confirmNewPassword) {
 		this.confirmNewPassword = confirmNewPassword;
+	}
+	
+
+	public File getUpload() {
+		return upload;
+	}
+	public void setUpload(File upload) {
+		this.upload = upload;
+	}
+	public String getUploadContentType() {
+		return uploadContentType;
+	}
+	public void setUploadContentType(String uploadContentType) {
+		this.uploadContentType = uploadContentType;
+	}
+	public String getUploadFileName() {
+		return uploadFileName;
+	}
+	public void setUploadFileName(String uploadFileName) {
+		this.uploadFileName = uploadFileName;
+	}
+	private String getSavePath() throws Exception {
+		return ServletActionContext.getServletContext().getRealPath(savePath);
+	}
+	public void setSavePath(String savePath) {
+		this.savePath = savePath;
 	}
 	
 }

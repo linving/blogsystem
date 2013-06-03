@@ -42,22 +42,24 @@
   </table>
   </form>
   <br/>
-  <form action="updateUserFace" method="post" enctype="multipart/form-data">
+  <s:form action="updateUserFace" enctype="multipart/form-data">
        <table width="100%" border="0">
   <tr>
     <td width="30%" align="right">头像</td>
-    <td width="70%">&nbsp;</td>
+    <td width="70%">
+    	<img src="user_face/<s:property value="user.userFaceTitle"/>" width="100px" height="100px"/>
+    </td>
   </tr>
   <tr>
     <td align="right">上传新头像</td>
-    <td><input type="file" name="userFaceLocation" id="fileField"></td>
+    <td><s:file name="upload" label="选择文件"/></td>
   </tr>
   <tr>
     <td align="right"></td>
-    <td><input  type="submit" value="上传"></td>
+    <td><s:submit value="上传"/></td>
   </tr>
   	</table>
-  </form>
+  </s:form>
   <br/>
   <form action="updateUserPassword" method="post">
    <table width="100%" border="0">

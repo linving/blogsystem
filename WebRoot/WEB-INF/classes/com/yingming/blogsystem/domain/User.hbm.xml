@@ -25,7 +25,7 @@
 			not-null="false" length="100" />
 		<property name="blogDescription" column="blogDescription"	type="string"
 			not-null="false" length="200" />
-		<property name="userFaceLocation" column="userFaceLocation"	type="string"
+		<property name="userFaceTitle" column="userFaceTitle"	type="string"
 			not-null="false" length="200" />
 		<property name="registerTime" type="java.sql.Timestamp" column="registerTime"/>
 		<set name="messages" inverse="true">

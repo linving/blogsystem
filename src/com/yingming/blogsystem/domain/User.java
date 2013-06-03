@@ -17,7 +17,7 @@ public class User implements Serializable {
 
 	private String userPass;
 	
-	private String userFaceLocation;
+	private String userFaceTitle;
 	
 	private String mail;
 	
@@ -45,14 +45,13 @@ public class User implements Serializable {
 	}
 
 	
-	
 
-	public String getUserFaceLocation() {
-		return userFaceLocation;
+	public String getUserFaceTitle() {
+		return userFaceTitle;
 	}
 
-	public void setUserFaceLocation(String userFaceLocation) {
-		this.userFaceLocation = userFaceLocation;
+	public void setUserFaceTitle(String userFaceTitle) {
+		this.userFaceTitle = userFaceTitle;
 	}
 
 	public String getMail() {
